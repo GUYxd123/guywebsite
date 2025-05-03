@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ฟีเจอร์ 1 - บันทึกการเรียนรู้รายวัน</title>
+  <link rel="stylesheet" href="feature1.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📘 บันทึกการเรียนรู้รายวัน</h1>
+    <form id="dailyForm">
+      <div class="form-group">
+        <label for="date">📅 วันที่</label>
+        <input type="date" id="date" name="date" required />
+      </div>
+
+      <div class="form-group">
+        <label for="topic">📖 วันนี้เรียนเรื่องอะไร?</label>
+        <textarea id="topic" name="topic" rows="3" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="notunderstood">❓ จุดที่ยังไม่เข้าใจ</label>
+        <textarea id="notunderstood" name="notunderstood" rows="3"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="summary">📝 สรุปความรู้ที่ได้</label>
+        <textarea id="summary" name="summary" rows="4" required></textarea>
+      </div>
+
+      <button type="submit">💾 บันทึก</button>
+    </form>
+
+    <div id="successMessage" class="hidden">✅ บันทึกเรียบร้อยแล้ว!</div>
+
+    <a href="main.html" class="back-link">← กลับหน้าแรก</a>
+  </div>
+
+  <script>
+    const form = document.getElementById("dailyForm");
+    const message = document.getElementById("successMessage");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      message.classList.remove("hidden");
+      form.reset();
+    });
+  </script>
+</body>
+</html>
